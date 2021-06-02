@@ -1,5 +1,5 @@
 from nltk.book import *
-
+from nltk import FreqDist
 
 def five_prints():
     print()
@@ -47,6 +47,8 @@ def main():
     print(f'Count of word "smote" in text3 is {text3.count("smote")}')
     print(f'percent of word "smote" in this text is {100*text3.count("smote")/ len(text3)}')
 
+    fdist = FreqDist(text1)  # частнотное распределение - количество слов в предложении
+    print(f'fdist of first text is {fdist.most_common(10)}')  # в качестве параметра - количество самых распространенных слов
 
 
 if __name__ == '__main__':
