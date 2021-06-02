@@ -72,5 +72,33 @@ def main():
     res = [i for i in my_text5 if len(i) > 10 and fdist5[i] > 5]
     print(sorted(res))
 
+    five_prints()
+
+    # collocation - словосочетание
+    print('Here is bigrams')  # биграммы это просто пары слов
+    print(list(bigrams(['more', 'hello', 'good bye']))) # output is [('more', 'hello'), ('hello', 'good bye')]
+
+    five_prints()
+
+    print('Here is collocations: ') # выведем словосочитания из текста 1
+    text1.collocations()
+
+    five_prints()
+
+    # мы можем посчитать freqdist от количества букв в словах
+
+    print('Here is frequency distribution of len of words: ')
+    my_fdist = FreqDist(len(i) for i in text1)
+    print(my_fdist.most_common())  # формат (длина (или другая искомая величина), количество) [(3, 50223), (1, 47933), (4, 42345), (2, 38513)
+
+    five_prints()
+
+    print(f'Maximum count of words is words with len: {my_fdist.max()}')
+
+    five_prints()
+
+    print(my_fdist.freq(5))  # процент слов с длиной 5
+
+
 if __name__ == '__main__':
     main()

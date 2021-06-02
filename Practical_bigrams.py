@@ -9,7 +9,7 @@ print(list(nltk.bigrams(nltk_tokens)))
 
 example_list = ['Hello', 'I', 'Love', 'You', 'son', 'of', 'a', 'bitch']
 
-list_token = nltk.word_tokenize()
+list_token = nltk.word_tokenize(example_list)
 
 print(list(nltk.bigrams(example_list)))
 print(list(nltk.bigrams(list_token)))
