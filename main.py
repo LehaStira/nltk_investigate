@@ -50,6 +50,27 @@ def main():
     fdist = FreqDist(text1)  # частнотное распределение - количество слов в предложении
     print(f'fdist of first text is {fdist.most_common(10)}')  # в качестве параметра - количество самых распространенных слов
 
+    five_prints()
+
+    print(fdist.hapaxes())  # слова, которые встречаются в тексте всего один раз
+
+    five_prints()
+
+    fdist.plot(59, cumulative = True)  # 59 самых встречающихся слов на графике
+
+    print('Words in text len of that are more then 19')
+    my_text = set(text1)
+    long_words = [w for w in my_text if len(w)>19]
+    print(long_words)
+
+    five_prints()
+
+    print('Words in text len of that are more that 10 and frequency distribution more 5')
+
+    fdist5 = FreqDist(text5)
+    my_text5 = set(text5)
+    res = [i for i in my_text5 if len(i) > 10 and fdist5[i] > 5]
+    print(sorted(res))
 
 if __name__ == '__main__':
     main()
