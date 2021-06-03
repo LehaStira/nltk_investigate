@@ -4,7 +4,7 @@ from nltk import FreqDist
 
 def main():
     chatroom = nps_chat.posts('10-19-20s_706posts.xml')
-    fdist = FreqDist(str(chatroom))
+    #fdist = FreqDist(str(chatroom))
     all_chat = list(chatroom)
     result = list()
     for i in all_chat:
